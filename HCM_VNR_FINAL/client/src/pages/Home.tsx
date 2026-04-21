@@ -17,10 +17,8 @@ import LegacyBook from '../components/portal/LegacyBook';
 
 import MuseumWall from '../components/portal/MuseumWall';
 
-// @ts-ignore
-import codangcovn from "@root/codangcovn.mp4";
-// @ts-ignore
-import covn from "@root/covn.mp4";
+const codangcovn = "/codangcovn.mp4";
+const covn = "/covn.mp4";
 // @ts-ignore
 import OfficialMap from "@root/bandovn.png";
 // @ts-ignore
@@ -45,16 +43,13 @@ import img2026 from "@root/2026.jpg";
 import sectionBg from "@root/assets/1-51d37.jpg";
 // @ts-ignore
 import logoBualiem from "@root/logo-bualiem.jpg";
-// @ts-ignore
-import trongdong from "@root/trongdong.mp4";
-// @ts-ignore
-import starFlagBg from "@root/COTUNGBAY.mp4";
+const trongdong = "/trongdong.mp4";
+const starFlagBg = "/COTUNGBAY.mp4";
 // @ts-ignore
 import caytreBg from "@root/caytre.jpg";
 // @ts-ignore
 import thanhlapDang from "@root/THÀNH LẬP ĐẢNG.jpg";
-// @ts-ignore
-import codang from "@root/codang.mp4";
+const codang = "/codang.mp4";
 // @ts-ignore
 import td7Bg from "@root/assets/TD7.jpg";
 // @ts-ignore
