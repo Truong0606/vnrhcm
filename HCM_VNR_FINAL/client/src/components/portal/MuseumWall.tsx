@@ -68,8 +68,7 @@ import ex32 from "@root/NHẬT KÝ ĐỐI NGOẠI VIỆT NAM 2021 - ĐẦY ĐỦ
 
 // @ts-ignore
 import bgRef from "@root/SACDO.jpg";
-// @ts-ignore
-import bgVideo from "@root/VIDEOWALL.mp4";
+const bgVideo = "/VIDEOWALL.mp4";
 
 interface MuseumWallProps {
    onSelectImg: (img: any) => void;
