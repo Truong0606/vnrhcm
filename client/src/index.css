@@ -1,0 +1,526 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Compact Info Card Styles */
+.glass-compact {
+  background: rgba(10, 5, 5, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
+.gold-text-glow {
+  color: #D4AF37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to bottom, #D4AF37, transparent) 1;
+}
+
+/* Typography: Bold Communist & Elite Heritage Style */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700;900&display=swap');
+
+/* Theme variables are moved to :root where Tailwind 4 picks them up automatically */
+
+:root {
+  /* Tailwind 4 Theme Variables */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-communist-red: var(--communist-red);
+  --color-communist-gold: var(--communist-gold);
+  --color-communist-black: var(--communist-black);
+  --color-communist-white: var(--communist-white);
+
+  /* Bold Communist - Color Palette */
+  --communist-red: #DC143C;      /* Deep revolutionary red */
+  --communist-gold: #FFD700;     /* Bold golden yellow */
+  --communist-black: #1A1A1A;    /* Deep black */
+  --communist-white: #FFFFFF;    /* Pure white */
+  --accent-red: #FF0000;         /* Bright red for accents */
+
+  /* Minimalist Elegance - Color Palette (Chosen) */
+  --elegance-red: #C41E3A;       /* Crimson Red */
+  --elegance-gold: #F4B942;      /* Golden Yellow */
+  --elegance-bg: #F9F7F4;        /* Off-White/Parchment */
+  --elegance-green: #1B5E20;     /* Deep Green (Bamboo) */
+  --elegance-text: #2C2C2C;      /* Charcoal */
+  
+  --primary: var(--communist-red);
+  --primary-foreground: var(--communist-white);
+  --sidebar-primary: var(--communist-red);
+  --sidebar-primary-foreground: var(--communist-white);
+  --chart-1: var(--communist-red);
+  --chart-2: var(--communist-gold);
+  --chart-3: var(--communist-black);
+  --chart-4: var(--accent-red);
+  --chart-5: var(--communist-gold);
+  --radius: 0.5rem;
+  --background: #000000;
+  --foreground: var(--communist-white);
+  --card: var(--communist-black);
+  --card-foreground: var(--communist-white);
+  --popover: var(--communist-black);
+  --popover-foreground: var(--communist-white);
+  --secondary: var(--communist-gold);
+  --secondary-foreground: var(--communist-black);
+  --muted: #333333;
+  --muted-foreground: #CCCCCC;
+  --accent: var(--communist-red);
+  --accent-foreground: var(--communist-white);
+  --destructive: var(--accent-red);
+  --destructive-foreground: var(--communist-white);
+  --border: var(--communist-red);
+  --input: #333333;
+  --ring: var(--communist-gold);
+  --sidebar: var(--communist-black);
+  --sidebar-foreground: var(--communist-white);
+  --sidebar-accent: var(--communist-red);
+  --sidebar-accent-foreground: var(--communist-white);
+  --sidebar-border: var(--communist-red);
+  --sidebar-ring: var(--communist-gold);
+}
+
+.theme-elegance {
+  --background: var(--elegance-bg);
+  --foreground: var(--elegance-text);
+  --primary: var(--elegance-red);
+  --secondary: var(--elegance-gold);
+  --accent: var(--elegance-green);
+  --border: var(--elegance-gold);
+  --card: #ffffff;
+  --card-foreground: var(--elegance-text);
+  --muted: #e5e7eb;
+  --muted-foreground: #6b7280;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', 'Playfair Display', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--communist-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  h1 {
+    font-size: 3.75rem; /* text-6xl */
+    line-height: 1;
+    color: var(--communist-gold);
+  }
+  
+  @media (min-width: 768px) {
+    h1 { font-size: 4.5rem; } /* text-7xl */
+  }
+  
+  @media (min-width: 1024px) {
+    h1 { font-size: 6rem; } /* text-8xl */
+  }
+  
+  h2 {
+    font-size: 3rem; /* text-5xl */
+    line-height: 1;
+    color: var(--communist-gold);
+    text-shadow: 2px 2px 0px var(--communist-red);
+  }
+  
+  @media (min-width: 768px) {
+    h2 { font-size: 3.75rem; } /* text-6xl */
+  }
+  
+  h3 {
+    font-size: 1.875rem; /* text-3xl */
+    line-height: 2.25rem;
+    color: var(--communist-gold);
+  }
+  
+  @media (min-width: 768px) {
+    h3 { font-size: 2.25rem; } /* text-4xl */
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--communist-white);
+  }
+  
+  .tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--communist-gold);
+    font-size: 1.2rem;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Fix for flex item overflow issues */
+  .flex-safe {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1400px;
+    }
+  }
+  
+  /* Bold Communist utilities */
+  /* Communist utilities are now handled by the @theme block automatically */
+
+  
+  /* Bold animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .pulse-bold {
+    animation: pulseBold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulseBold {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Hover effects */
+  .hover-scale {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--communist-red);
+  }
+  
+  /* Bold button styles */
+  .btn-communist {
+    padding: 1rem 2rem; /* px-8 py-4 */
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.3s ease-out;
+    background-color: var(--communist-red);
+    color: var(--communist-white);
+    border: 3px solid var(--communist-gold);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  .btn-communist:hover {
+    background-color: var(--communist-gold);
+    color: var(--communist-black);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Section divider */
+  .divider-communist {
+    height: 4px;
+    background: linear-gradient(90deg, var(--communist-red) 0%, var(--communist-gold) 50%, var(--communist-red) 100%);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* --- VR Tour Specific Animations --- */
+@keyframes border-rotate {
+  0% { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+@keyframes particleFloat {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.vr-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 1.5rem;
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    #d4af37 0%,
+    transparent 15%,
+    transparent 45%,
+    #ff3131 50%,
+    transparent 65%,
+    transparent 85%,
+    #d4af37 100%
+  );
+  z-index: -1;
+  animation: border-rotate 4s linear infinite;
+  opacity: 0.6;
+}
+
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #d4af37;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 8s infinite;
+}
+
+/* --- 3D & Advanced Animations --- */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.card-3d-hover {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateZ(0);
+}
+
+.card-3d-hover:hover {
+  transform: translateZ(20px) rotateX(2deg) rotateY(2deg);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+/* --- REALISTIC NOTEBOOK SYSTEM (V2 - ULTRA REALISM) --- */
+.notebook-container {
+  perspective: 2500px;
+}
+
+.notebook-paper {
+  background: #fdfaf0; /* Warm Cream Paper Color */
+  background-image: 
+    linear-gradient(#e5e7eb 1.1px, transparent 1.1px), 
+    linear-gradient(90deg, transparent 59px, #ef444430 59px, #ef444430 61px, transparent 61px);
+  background-size: 100% 32px, 100% 100%;
+  position: relative;
+  box-shadow: 
+    -1px 1px 2px rgba(0,0,0,0.1),
+    -5px 5px 15px rgba(0,0,0,0.2),
+    -15px 15px 40px rgba(0,0,0,0.5),
+    inset 20px 0 20px -15px rgba(0,0,0,0.1); /* Left edge shadow */
+  border-radius: 4px 15px 15px 4px;
+  min-height: 850px;
+  padding: 60px 60px 60px 120px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+/* Realistic Paper Grain/Texture Overlay */
+.notebook-paper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Subtle fold/curvature effect */
+.notebook-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 105px;
+  height: 100%;
+  width: 1px;
+  background: rgba(220, 20, 60, 0.3);
+  z-index: 10;
+}
+
+.spiral-binding {
+  position: absolute;
+  top: 40px;
+  left: 25px;
+  bottom: 40px;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 60;
+}
+
+/* Realistic Punch Holes */
+.punch-hole {
+  position: absolute;
+  left: 45px;
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.1), 0 1px 1px rgba(255,255,255,0.2);
+  z-index: 40;
+}
+
+.spiral-ring {
+  width: 65px;
+  height: 16px;
+  background: linear-gradient(to right, #9ca3af, #f3f4f6 30%, #9ca3af 60%, #4b5563);
+  border-radius: 10px;
+  box-shadow: 
+    0 4px 6px rgba(0,0,0,0.4),
+    inset 0 1px 3px rgba(255,255,255,0.5);
+  position: relative;
+  left: -20px;
+  z-index: 70;
+  transform: rotate(-2deg);
+}
+
+.paper-study-bg {
+  background: #111111;
+  background-image: 
+    url("https://www.transparenttextures.com/patterns/dark-wood.png"),
+    radial-gradient(circle at center, rgba(30, 15, 10, 0.8) 0%, #0a0a0a 100%);
+  position: relative;
+}
+
+.notebook-title {
+  font-family: 'Cormorant Garamond', serif;
+  border-bottom: 2px solid #eab30860;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.handwritten-content {
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 32px;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
