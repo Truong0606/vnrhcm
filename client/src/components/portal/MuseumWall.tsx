@@ -247,30 +247,30 @@ const MuseumWall: React.FC<MuseumWallProps> = ({ onSelectImg }) => {
                   </div>
                </motion.div>
             ) : (
-            <motion.div 
-               key="exhibition"
-               className="fixed inset-0 z-[99999] bg-[#050505] flex flex-col overflow-y-auto overflow-x-hidden"
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               exit={{ opacity: 0 }}
-               transition={{ duration: 0.8 }}
-            >
-               {/* Global CSS to hide navbar/header and body scroll */}
-               <style>{`
+               <motion.div
+                  key="exhibition"
+                  className="fixed inset-0 z-[99999] bg-[#050505] flex flex-col overflow-y-auto overflow-x-hidden"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+               >
+                  {/* Global CSS to hide navbar/header and body scroll */}
+                  <style>{`
                   body { overflow: hidden !important; }
                   header, nav, .navbar, [role="navigation"] { display: none !important; }
                `}</style>
-                   {/* Exhibition Background Video - Clean and Clear */}
-                   <div className="absolute inset-0 z-0 pointer-events-none">
-                      <video 
-                         src={bgVideo} 
-                         autoPlay loop muted playsInline 
-                         className="w-full h-full object-cover fixed top-0 left-0 brightness-110 saturate-[1.1]" 
-                      />
-                   </div>
+                  {/* Exhibition Background Video - Clean and Clear */}
+                  <div className="absolute inset-0 z-0 pointer-events-none">
+                     <video
+                        src={bgVideo}
+                        autoPlay loop muted playsInline
+                        className="w-full h-full object-cover fixed top-0 left-0 brightness-110 saturate-[1.1]"
+                     />
+                  </div>
 
                   {/* IMMERSIVE CONTROLS */}
-                  <button 
+                  <button
                      onClick={() => setIsOpen(false)}
                      className="fixed top-12 left-12 z-[1001] flex items-center gap-4 bg-black/60 hover:bg-red-900 border border-[#D4AF37]/50 text-white px-8 py-3 rounded-full transition-all group shadow-[0_0_20px_rgba(212,175,55,0.2)]"
                   >

@@ -30,7 +30,7 @@ import hcmValueImage from "@root/gia tri tu tuong ho chi minh trong tinh hinh mo
 // @ts-ignore
 import BacNPT from "@root/BacNPT.jpg";
 // @ts-ignore
-import FinalPoster from "@root/assets/poster_dai_hoi_xiii_final_1.png";
+import FinalPoster from "@root/poster_dai_hoi_xiii_final_1.png";
 // @ts-ignore
 import img2021 from "@root/2021.png";
 // @ts-ignore
@@ -44,7 +44,7 @@ import img2025 from "@root/2025.jpg";
 // @ts-ignore
 import img2026 from "@root/2026.jpg";
 // @ts-ignore
-import sectionBg from "@root/assets/1-51d37.jpg";
+import sectionBg from "@root/1-51d37.jpg";
 // @ts-ignore
 import logoBualiem from "@root/logo-bualiem.jpg";
 // @ts-ignore
@@ -58,7 +58,7 @@ import thanhlapDang from "@root/THÀNH LẬP ĐẢNG.jpg";
 // @ts-ignore
 import codang from "@root/codang.mp4";
 // @ts-ignore
-import td7Bg from "@root/assets/TD7.jpg";
+import td7Bg from "@root/TD7.jpg";
 // @ts-ignore
 import BacTrongDaiHoi14 from "@root/ảnh bác Trọng.png";
 // @ts-ignore
