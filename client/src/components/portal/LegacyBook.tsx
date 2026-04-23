@@ -96,8 +96,8 @@ const LegacyBook: React.FC<LegacyBookProps> = ({
                      <div className="w-full h-full bg-[#1e0808] border-r-[20px] border-[#3a0a0a] relative overflow-hidden">
                         {backCover && <img src={backCover} className="w-full h-full object-cover" alt="Back Cover" />}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
-                        <div className="absolute bottom-12 left-0 right-0 text-center text-white/40 uppercase tracking-[0.4em] text-[10px]">
-                           Trang cuối di sản
+                        <div className="flex flex-col items-center justify-center h-full text-center p-8 bg-gradient-to-br from-red-900/40 to-black">
+                           <div className="w-32 h-1 bg-[#D4AF37]/50 mb-12" />
                         </div>
                      </div>
                   </div>
