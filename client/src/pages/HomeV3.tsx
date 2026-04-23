@@ -22,6 +22,8 @@ import MuseumWall from '../components/portal/MuseumWall';
 // @ts-ignore
 import codangcovn from "@root/codangcovn.mp4";
 // @ts-ignore
+import cobay from "@root/cobay.mp4";
+// @ts-ignore
 import covn from "@root/covn.mp4";
 // @ts-ignore
 import OfficialMap from "@root/bandovn.png";
@@ -141,7 +143,7 @@ export default function Home() {
          `}</style>
 
          <div className="fixed inset-0 z-0 pointer-events-none">
-            <video autoPlay loop muted={isMuted} playsInline className="w-full h-full object-cover">
+            <video autoPlay loop muted={isMuted} playsInline className="w-full h-full object-cover filter brightness-[1.3] contrast-[1.4] saturate-[1.6]">
                <source src={codangcovn} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#080404]/60" />
@@ -912,10 +914,35 @@ export default function Home() {
             <motion.div
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
-               className="fixed inset-0 z-[100000] bg-black/95 backdrop-blur-3xl p-12 lg:p-24 overflow-y-auto"
+               className="fixed inset-0 z-[100000] overflow-y-auto bg-[#080404]"
             >
-               <div className="max-w-7xl mx-auto h-full flex flex-col pt-12">
-                  <div className="flex justify-between items-center mb-20 border-b border-white/5 pb-12">
+               {/* Map Modal Background: Fixed for continuous coverage */}
+               <div className="fixed inset-0 z-0 select-none pointer-events-none overflow-hidden bg-[#080404]">
+                  <video
+                     autoPlay
+                     muted
+                     loop
+                     playsInline
+                     className="w-full h-full object-cover filter brightness-[1.3] contrast-[1.3] saturate-[1.5]"
+                  >
+                     <source src={cobay} type="video/mp4" />
+                  </video>
+                  {/* Layer 1: Film Grain Overlay */}
+                  <div className="absolute inset-0 z-10 opacity-[0.12] mix-blend-overlay pointer-events-none"
+                     style={{ backgroundImage: `url("https://grainy-gradients.vercel.app/noise.svg")`, backgroundSize: '200px' }} />
+
+                  {/* Layer 2: Anamorphic Horizontal Flare */}
+                  <div className="absolute top-1/2 left-0 w-full h-[1px] bg-cyan-400/20 blur-[2px] z-20" />
+
+                  {/* Layer 3: Professional Grading */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-red-900/5 mix-blend-soft-light z-30" />
+
+                  {/* Layer 4: Deep Exposure & Vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent z-40" />
+               </div>
+
+               <div className="relative z-10 max-w-7xl mx-auto h-full flex flex-col pt-12 overflow-visible">
+                  <div className="flex justify-between items-center mb-[360px] border-b border-white/5 pb-12">
                      <div>
                         <h2 className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[1em] mb-4 text-center lg:text-left">CHỌN CHƯƠNG</h2>
                         <h3 className="text-white text-5xl lg:text-7xl font-playfair font-black text-center lg:text-left uppercase">BẢN ĐỒ DI SẢN</h3>
