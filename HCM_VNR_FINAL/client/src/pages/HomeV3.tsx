@@ -45,6 +45,7 @@ import sectionBg from "@root/assets/1-51d37.jpg";
 import logoBualiem from "@root/logo-bualiem.jpg";
 const trongdong = "/trongdong.mp4";
 const starFlagBg = "/COTUNGBAY.mp4";
+const cobay = "/cobay.mp4";
 // @ts-ignore
 import caytreBg from "@root/caytre.jpg";
 // @ts-ignore
@@ -887,7 +888,7 @@ export default function Home() {
                      playsInline
                      className="w-full h-full object-cover filter brightness-[1.3] contrast-[1.3] saturate-[1.5]"
                   >
-                     <source src={starFlagBg} type="video/mp4" />
+                     <source src={cobay} type="video/mp4" />
                   </video>
                   {/* Layer 1: Film Grain Overlay */}
                   <div className="absolute inset-0 z-10 opacity-[0.12] mix-blend-overlay pointer-events-none"
